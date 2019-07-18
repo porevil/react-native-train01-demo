@@ -59,6 +59,42 @@ export default class Camerascreen extends Component {
     });
   };
 
+  uploadWithAxios = async ()=>{
+    const data = new FormData();
+    data.append("username", "codemobiles"); // you can append anyone.
+    data.append("password", "1234"); // you can append anyone.
+    data.append("userfile", {
+      uri: this.state.image.uri,
+      type: "image/jpeg", // or photo.type
+      name: "testPhotoName.jpg"
+    });
+
+    let result = await axios.post("http://192.168.0.104:5000/uploads",data);
+    Alert.alert(result.data);
+
+
+  }
+  
+  upload = ()=>{
+    const data = new FormData();
+    data.append("username", "codemobiles"); // you can append anyone.
+    data.append("password", "1234"); // you can append anyone.
+    data.append("userfile", {
+      uri: this.state.image.uri,
+      type: "image/jpeg", // or photo.type
+      name: "testPhotoName.jpg"
+    });
+    fetch("http://192.168.0.104:5000/uploads", {
+      method: "POST",
+      body: data
+    })
+      .then(res => res.json())
+      .then(res => {
+        Alert.alert(res.result);
+      });
+
+  }
+
   render() {
     return (
       <ImageBackground
@@ -98,7 +134,7 @@ export default class Camerascreen extends Component {
           </TouchableOpacity>
         ) : null}
 
-        
+
         {this.state.image && (
             <Image source={this.state.image} 
             style={{

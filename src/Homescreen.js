@@ -10,10 +10,10 @@ import {
   TextInput,
   Keyboard,
   Platform,
-  TouchableOpacity
+  TouchableOpacity,
+  Icon
 } from "react-native";
 
-import Icon from "react-native-vector-icons/FontAwesome";
 import AsyncStorage from "@react-native-community/async-storage";
 
 export default class Homescreen extends Component {
@@ -144,7 +144,7 @@ Homescreen.navigationOptions = ({ navigation }) => {
         onPress={() => alert("www.codemobiles.com")}
         style={{ padding: 10 }}
       >
-        <Icon
+        {/* <Icon
           name="address-card"
           size={20}
           color="#fff"
@@ -152,7 +152,7 @@ Homescreen.navigationOptions = ({ navigation }) => {
             height: 24,
             width: 24
           }}
-        />
+        /> */}
       </TouchableOpacity>
     )
   };

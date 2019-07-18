@@ -12,8 +12,7 @@ import {
   Platform,
   TouchableOpacity
 } from "react-native";
-import { Avatar } from "react-native-elements";
-import Icon from "react-native-vector-icons/FontAwesome";
+
 import AsyncStorage from '@react-native-community/async-storage';
 
 
@@ -25,7 +24,7 @@ class IconTextInput extends Component {
 
     return (
     <View style={{ flexDirection: "row" }}>
-    <Icon name={icon} size={25} />
+    {/* <Icon name={icon} size={25} /> */}
     <TextInput
       onChangeText={onchange}
       secureTextEntry={ispassword}

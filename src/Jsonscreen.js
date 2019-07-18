@@ -11,7 +11,6 @@ import {
 
 import AsyncStorage from "@react-native-community/async-storage";
 import { httpClient } from "./HttpClient";
-import { Card } from "react-native-elements";
 
 export default class Jsonscreen extends Component {
   constructor(props) {
@@ -55,7 +54,7 @@ export default class Jsonscreen extends Component {
           this.props.navigation.navigate("youtube", { item });
         }}
       >
-        <Card containerStyle={styles.listCard}>
+        {/* <Card containerStyle={styles.listCard}> */}
           {/* Avatar, Title */}
           <View style={styles.listCardView}>
             <Image
@@ -74,7 +73,7 @@ export default class Jsonscreen extends Component {
             style={styles.listYoutbeImage}
             source={{ uri: item.youtube_image }}
           />
-        </Card>
+        {/* </Card> */}
       </TouchableOpacity>
     );
   };
